@@ -5,4 +5,9 @@ public class HelloWorld {
         System.out.println("Hello, World");
     }
 
+    
+    private int sum(int a, int b ){
+	return (a+b);
+    }
+
 }
