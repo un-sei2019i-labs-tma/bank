@@ -9,5 +9,7 @@ public class HelloWorld {
     private int sum(int a, int b ){
 	return (a+b);
     }
-
+    private int div(int a, int b){
+	return (a/b);
+    }
 }
