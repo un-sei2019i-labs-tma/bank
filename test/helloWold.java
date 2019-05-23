@@ -12,10 +12,16 @@ public class HelloWorld {
     private int sum(int a, int b ){
 	return (a+b);
     }
+<<<<<<< HEAD
 
     private static int pow(int base, int n){
 	int potencia = (int) Math.pow(base,n);
 	return potencia;
     }
 
+=======
+    private int div(int a, int b){
+	return (a/b);
+    }
+>>>>>>> featurediv
 }
