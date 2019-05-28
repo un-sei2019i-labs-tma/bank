@@ -5,8 +5,8 @@ public class DBUtilities {
     //create User table
     public static final String CREATE_USER_TABLE = "CREATE TABLE user (" +
             "id INTEGER PRIMARY KEY," +
-            "name TEXT NOT NULL ," +
-            "password TEXT NOT NULL )";
+            "name INTEGER ," +
+            "password INTEGER (6) )";
 
     public static final  String ADD_TEST_USER = "()";
 

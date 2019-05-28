@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase DB = admin.getWritableDatabase();
         ContentValues register = new ContentValues();
         register.put("id",1);
-        register.put("name","tesoro");
-        register.put("password","gwynevere");
+        register.put("name",7);
+        register.put("password",123456);
 
         DB.insert("user",null,register);
         DB.close();
