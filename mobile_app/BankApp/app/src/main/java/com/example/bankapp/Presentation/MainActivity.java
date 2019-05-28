@@ -1,4 +1,4 @@
-package com.example.bankapp;
+package com.example.bankapp.Presentation;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.bankapp.DataAccess.Database.DataAccess;
+import com.example.bankapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
