@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase DB = admin.getWritableDatabase();
         ContentValues register = new ContentValues();
         register.put("id",1);
-        register.put("name","7");
-        register.put("password",123456);
+        register.put("name","tesoro");
+        register.put("password","gwynevere");
 
         DB.insert("user",null,register);
         DB.close();
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             if (row.moveToFirst()){
 
                 if (row.getString(1).equals(password)){
-                    Toast.makeText(this,"Todo correcto :D",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"praise the sun \\[T]/",Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(this,"Password incorecto",Toast.LENGTH_SHORT).show();
                 }
