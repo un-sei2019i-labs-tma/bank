@@ -4,12 +4,50 @@ public class DBUtilities {
 
     //create User table
     public static final String CREATE_USER_TABLE = "CREATE TABLE user (" +
-            "id INTEGER PRIMARY KEY," +
-            "name INTEGER ," +
-            "password INTEGER (6) )";
+            "idUser INTEGER PRIMARY KEY ," +
+            "name TEXT NOT NULL ," +
+            "lastName TEXT NOT NULL ," +
+            "password INTEGER (6) NOT NULL ," +
+            "account INTEGER (10) NOT NULL ," +
+            "email TEXT NOT NULL ," +
+            "prev_password INTEGER (6) ," +
+            "passwordDate DATE ," +
+            "FOREING KEY (account) REFERENCES account(id_account))";
+
+    public static final String CREATE_ADMIN_TABLE = "CREATE TABLE admin (" +
+            "id_admin INTEGER (10) PRIMARY KEY," +
+            "name TEXT NOT NULL ," +
+            "last_name TEXT NOT NULL ," +
+            "password TEXT (6) NOT NULL ," +
+            "email TEXT NOT NULL)";
+
+
+    public static final String CREATE_ACCOUNT_TABLE = "CREATE TABLE account (" +
+            "id_account INTEGER (10) PRIMARY KEY," +
+            "balance DOUBLE (10) NOT NULL )";
+
+
+    public static final String CREATE_ACCOUNT_TRANSACTION_TABLE = "CREATE TABLE transaction (" +
+            "accountId_account INTEGER (10) PRIMARY KEY," +
+            "transactioId_transaction INTEGER (10) PRIMARY KEY " +
+            "FOREING KEY (accountId_account) REFERENCES account(id_account)" +
+            "FOREING KEY (transactionId_transaction) REFERENCES transactions(id_transaction))";
+
+
+    public static final String CREATE_TRANSACTIONS_TABLE = "CREATE TABLE transaction (" +
+            "id_transaction INTEGER (10) PRIMARY KEY," +
+            "account_origin INTEGER (10) NOT NULL" +
+            "account_end INTEGER (10) NOT NULL" +
+            "date DATA() NOT NULL" +
+            "transaction_type INTEGER (10) NOT NULL " +
+            "FOREING KEY (transactionType) REFERENCES transaction_type(idTransactionType))";
+
+
+    public static final String CREATE_TRANSACTION_TYPE_TABLE = "CREATE TABLE transaction (" +
+            "idTransactionType INTEGER (10) PRIMARY KEY," +
+            "type TEXT NOT NULL)";
 
     public static final  String ADD_TEST_USER = "()";
-
 
 
 
