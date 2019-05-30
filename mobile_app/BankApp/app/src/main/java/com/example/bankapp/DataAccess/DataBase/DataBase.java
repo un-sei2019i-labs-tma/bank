@@ -1,13 +1,13 @@
-package com.example.bankapp.DataAccess.Database;
+package com.example.bankapp.DataAccess.DataBase;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DataAccess extends SQLiteOpenHelper {
+public class DataBase extends SQLiteOpenHelper {
 
 
-    public DataAccess(Context context, String name,SQLiteDatabase.CursorFactory factory, int version) {
+    public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
