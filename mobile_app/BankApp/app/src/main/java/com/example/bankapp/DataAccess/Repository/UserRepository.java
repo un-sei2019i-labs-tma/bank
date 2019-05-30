@@ -18,14 +18,12 @@ public class UserRepository {
         register.put("lastName",user.getLastName());
         register.put("password", user.getPassword());
         register.put("account", user.getAccount());
+        register.put("email",user.getEmail());
+        register.put("prev_password",user.getPrevPassword());
+        //register.put("passwordDate",user.getPasswordDate()); ???
 
         DB.insert("user",null,register);
         DB.close();
-
-
-
-
-
 
     }
 
