@@ -1,4 +1,4 @@
-package com.example.bankapp.Models;
+package com.example.bankapp.DataAccess.Models;
 
 import java.util.Date;
 

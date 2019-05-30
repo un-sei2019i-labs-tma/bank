@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.bankapp.DataAccess.Database.DataAccess;
+import com.example.bankapp.DataAccess.DataBase.DataBase;
 import com.example.bankapp.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        DataAccess admin = new DataAccess(this,"DataBase",null,1);
+        DataBase admin = new DataBase(this,"DataBase",null,1);
 
         // create test user
         SQLiteDatabase DB = admin.getWritableDatabase();
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logIn(View view){
-        DataAccess admin = new DataAccess(this,"DataBase",null,1);
+        DataBase admin = new DataBase(this,"DataBase",null,1);
         SQLiteDatabase DB = admin.getWritableDatabase();
         String user = mTextUsername.getText().toString();
         String password = mTextPassword.getText().toString();

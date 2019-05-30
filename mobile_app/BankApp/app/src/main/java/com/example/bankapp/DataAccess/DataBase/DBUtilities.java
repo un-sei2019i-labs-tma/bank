@@ -1,4 +1,4 @@
-package com.example.bankapp.DataAccess.Database;
+package com.example.bankapp.DataAccess.DataBase;
 
 public class DBUtilities {
 

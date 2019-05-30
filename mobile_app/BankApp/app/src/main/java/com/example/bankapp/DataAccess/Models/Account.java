@@ -1,3 +1,5 @@
+package com.example.bankapp.DataAccess.Models;
+
 public class Account {
 
     private int idAccount;
