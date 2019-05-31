@@ -29,17 +29,17 @@ public class DBUtilities {
 
     public static final String CREATE_ACCOUNT_TRANSACTION_TABLE = "CREATE TABLE transaction (" +
             "accountId_account INTEGER (10) PRIMARY KEY," +
-            "transactioId_transaction INTEGER (10) PRIMARY KEY " +
-            "FOREIGN KEY (accountId_account) REFERENCES account(id_account)" +
+            "transactioId_transaction INTEGER (10) PRIMARY KEY, " +
+            "FOREIGN KEY (accountId_account) REFERENCES account(id_account)," +
             "FOREIGN KEY (transactionId_transaction) REFERENCES transactions(id_transaction))";
 
 
     public static final String CREATE_MOVEMENT_TABLE = "CREATE TABLE movement (" +
             "id_transaction INTEGER (10) PRIMARY KEY," +
-            "account_origin INTEGER (10) NOT NULL" +
-            "account_end INTEGER (10) NOT NULL" +
-            "date DATA() NOT NULL" +
-            "transaction_type INTEGER (10) NOT NULL " +
+            "account_origin INTEGER (10) NOT NULL," +
+            "account_end INTEGER (10) NOT NULL," +
+            "date DATA() NOT NULL," +
+            "transaction_type INTEGER (10) NOT NULL, " +
             "FOREIGN KEY (transactionType) REFERENCES transaction_type(idTransactionType))";
 
 
