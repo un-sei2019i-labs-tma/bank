@@ -33,11 +33,6 @@ public class User {
         this.passwordDate= passwordDate;
     }
 
-    public User(int id ,String name ){
-        this.name=name;
-        this.idUser=id;
-    }
-
     public User(Cursor row) {
         if (row.moveToFirst()){
             this.idUser = row.getInt(0);
