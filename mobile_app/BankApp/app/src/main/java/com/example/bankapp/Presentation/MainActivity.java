@@ -11,7 +11,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.bankapp.DataAccess.DataBase.DataBase;
+import com.example.bankapp.DataAccess.Models.User;
+import com.example.bankapp.DataAccess.Repository.UserRepository;
 import com.example.bankapp.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,19 +30,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        DataBase admin = new DataBase(this,"DataBase",null,1);
 
-        // create test user
-        SQLiteDatabase DB = admin.getWritableDatabase();
-        ContentValues register = new ContentValues();
-        register.put("id",1);
-        register.put("name",7);
-        register.put("password",123456);
-
-        DB.insert("user",null,register);
-        DB.close();
-
-
+        // create test use
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        Date date = new Date(System.currentTimeMillis());
+        User user = new User(1,"pepito","perez",654321,123456789,"test@test.com",000000,date );
+        UserRepository repo= new UserRepository();
+        repo.createUser(this,user);
         mTextUsername = (EditText) findViewById(R.id.edituser);
         mTextPassword = (EditText) findViewById(R.id.editpassword);
         mButtonLogin = (Button) findViewById(R.id.buttonlogin);

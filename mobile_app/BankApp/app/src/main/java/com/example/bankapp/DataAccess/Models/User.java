@@ -1,22 +1,28 @@
 package com.example.bankapp.DataAccess.Models;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.util.Log;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class User {
     private int idUser;
     private String name;
     private String lastName;
-    private String password;
+    private int password;
     private int account;
     private String email;
-    private String prevPassword;
+    private int prevPassword;
     protected Date passwordDate;
 
     public User(){
 
     }
 
-    public User(int idUser, String name, String lastName, String password, int account, String email, String prevPassword, Date passwordDate){
+    public User(int idUser, String name, String lastName, int password, int account, String email, int prevPassword, Date passwordDate){
         this.idUser = idUser;
         this.name = name;
         this.lastName = lastName;
@@ -30,6 +36,19 @@ public class User {
     public User(int id ,String name ){
         this.name=name;
         this.idUser=id;
+    }
+
+    public User(Cursor row) {
+        if (row.moveToFirst()){
+            this.idUser = row.getInt(0);
+            this.name = row.getString(1);
+            this.lastName = row.getString(2);
+            this.password = row.getInt(3);
+            this.account = row.getInt(4);
+            this.email = row.getString(5);
+            this.prevPassword = row.getInt(6);
+            this.passwordDate = new Date(row.getLong(7));
+        }
     }
 
 
@@ -60,11 +79,11 @@ public class User {
     }
 
 
-    public void setPassword(String password) {
+    public void setPassword(int password) {
         this.password = password;
     }
 
-    public String getPassword() {
+    public int getPassword() {
         return password;
     }
 
@@ -87,11 +106,11 @@ public class User {
     }
 
 
-    public void setPrevPassword(String prevPassword) {
+    public void setPrevPassword(int prevPassword) {
         this.prevPassword = prevPassword;
     }
 
-    public String getPrevPassword() {
+    public int getPrevPassword() {
         return prevPassword;
     }
 
