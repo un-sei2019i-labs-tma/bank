@@ -1,5 +1,7 @@
 package com.example.bankapp.DataAccess.Models;
 
+import android.database.Cursor;
+
 import java.util.Date;
 
 public class Transaction {
@@ -20,6 +22,17 @@ public class Transaction {
         this.date = date;
         this.transactionType = transactionType;
     }
+    public Transaction(Cursor row){
+        if (row.moveToFirst()){
+            this.idTransaction = row.getInt(0);
+            this.accountOrigin = row.getInt(1);
+            this.accountEnd = row.getInt(2);
+            this.mount = row.getDouble(3);
+            this.date = new Date(row.getLong(4));
+            this.transactionType = row.getInt(5);
+        }
+    }
+
 
 
 

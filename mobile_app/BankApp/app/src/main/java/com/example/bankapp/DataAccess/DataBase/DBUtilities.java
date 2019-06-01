@@ -27,19 +27,21 @@ public class DBUtilities {
             "balance DOUBLE (10) NOT NULL )";
 
 
-    public static final String CREATE_ACCOUNT_TRANSACTION_TABLE = "CREATE TABLE transaction (" +
-            "accountId_account INTEGER (10) PRIMARY KEY," +
-            "transactioId_transaction INTEGER (10) PRIMARY KEY, " +
+    public static final String CREATE_ACCOUNT_TRANSACTION_TABLE = "CREATE TABLE account_transaction (" +
+            "accountId_account INTEGER (10) PRIMARY KEY ," +
+            "transactionId_transaction INTEGER (10) PRIMARY KEY, " +
             "FOREIGN KEY (accountId_account) REFERENCES account(id_account)," +
-            "FOREIGN KEY (transactionId_transaction) REFERENCES transactions(id_transaction))";
+            "FOREIGN KEY (id_transaction) REFERENCES transactions(id_transaction))";
 
 
-    public static final String CREATE_MOVEMENT_TABLE = "CREATE TABLE movement (" +
-            "id_transaction INTEGER (10) PRIMARY KEY," +
-            "account_origin INTEGER (10) NOT NULL," +
+    public static final String CREATE_TRANSACTIONS_TABLE = "CREATE TABLE transactions (" +
+            "id_transaction INTEGER (10) PRIMARY KEY AUTOINCREMENT," +
+            "account_origin INTEGER (10) ," +
             "account_end INTEGER (10) NOT NULL," +
-            "date DATA() NOT NULL," +
+            "mount DOUBLE NOT NULL," +
+            "date DATE NOT NULL," +
             "transaction_type INTEGER (10) NOT NULL, " +
+            "FOREIGN KEY (account_end) REFERENCES account(id_account)" +
             "FOREIGN KEY (transactionType) REFERENCES transaction_type(idTransactionType))";
 
 
