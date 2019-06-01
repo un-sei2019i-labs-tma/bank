@@ -51,11 +51,19 @@ public class UserRepository {
         DB.close();
     }
 
-    public  void  deleteUser(Context context, int idUser){
+    public  void  deleteUserByID(Context context, int idUser){
         DataBase admin = new DataBase(context,"DataBase",null,1);
         SQLiteDatabase DB = admin.getWritableDatabase();
         DB.delete("user","idUser ="+idUser,null);
         DB.close();
     }
+
+    public  void  deleteUser(Context context, User user){
+        DataBase admin = new DataBase(context,"DataBase",null,1);
+        SQLiteDatabase DB = admin.getWritableDatabase();
+        DB.delete("user","idUser ="+user.getIdUser(),null);
+        DB.close();
+    }
+
 
 }

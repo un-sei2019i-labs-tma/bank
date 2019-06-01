@@ -17,7 +17,7 @@ public class DataBase extends SQLiteOpenHelper {
         db.execSQL(DBUtilities.CREATE_ADMIN_TABLE);
         db.execSQL(DBUtilities.CREATE_ACCOUNT_TABLE);
         db.execSQL(DBUtilities.CREATE_ACCOUNT_TRANSACTION_TABLE);
-        db.execSQL(DBUtilities.CREATE_MOVEMENT_TABLE);
+        db.execSQL(DBUtilities.CREATE_TRANSACTIONS_TABLE);
         db.execSQL(DBUtilities.CREATE_TRANSACTION_TYPE_TABLE);
 
     }
