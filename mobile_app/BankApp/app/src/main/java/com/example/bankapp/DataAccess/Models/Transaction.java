@@ -22,6 +22,8 @@ public class Transaction {
         this.date = date;
         this.transactionType = transactionType;
     }
+
+
     public Transaction(Cursor row){
         if (row.moveToFirst()){
             this.idTransaction = row.getInt(0);
@@ -32,8 +34,6 @@ public class Transaction {
             this.transactionType = row.getInt(5);
         }
     }
-
-
 
 
     public void setIdTransaction(int idTransaction) {
@@ -88,6 +88,4 @@ public class Transaction {
     public int getTransactionType() {
         return transactionType;
     }
-
-
 }
