@@ -1,11 +1,13 @@
 package com.example.bankapp.DataAccess.Models;
 
+import android.database.Cursor;
+
 public class Account {
 
     private int idAccount;
     private int balance;
 
-    public Account() {
+    public Account(Cursor row) {
 
     }
 

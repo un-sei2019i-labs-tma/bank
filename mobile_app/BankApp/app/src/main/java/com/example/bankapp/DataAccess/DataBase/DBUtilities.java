@@ -14,12 +14,11 @@ public class DBUtilities {
             "passwordDate DATE ," +
             "FOREIGN KEY (account) REFERENCES account(id_account))";
 
-    public static final String CREATE_ADMIN_TABLE = "CREATE TABLE admin (" +
-            "id_admin INTEGER (10) PRIMARY KEY," +
+    public static final String CREATE_ADMIN_TABLE = "CREATE TABLE manager (" +
+            "id_manager INTEGER (10) PRIMARY KEY," +
             "name TEXT NOT NULL ," +
             "last_name TEXT NOT NULL ," +
-            "password TEXT (6) NOT NULL ," +
-            "email TEXT NOT NULL)";
+            "password TEXT (6) NOT NULL )";
 
 
     public static final String CREATE_ACCOUNT_TABLE = "CREATE TABLE account (" +
