@@ -7,9 +7,6 @@ public class Account {
     private int idAccount;
     private int balance;
 
-    public Account(Cursor row) {
-
-    }
 
     public Account(int idAccount, int balance) {
         this.idAccount = idAccount;
@@ -34,4 +31,12 @@ public class Account {
         return balance;
     }
 
+
+    public Account(Cursor row) {
+        if (row.moveToFirst()){
+            this.idAccount = row.getInt(0);
+            this.balance = row.getInt(1);
+        }
+
+    }
 }

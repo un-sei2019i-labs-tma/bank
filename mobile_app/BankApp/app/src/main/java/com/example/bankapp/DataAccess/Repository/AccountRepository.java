@@ -21,7 +21,7 @@ public class AccountRepository {
 
     }
 
-    public Account geteAccount(Context context, int id){
+    public Account getAccount(Context context, int id){
         DataBase admin = new DataBase(context,"DataBase",null,1);
         SQLiteDatabase DB = admin.getWritableDatabase();
         Cursor row = DB.rawQuery("SELECT * FROM  account WHERE id_account ="+id,null);

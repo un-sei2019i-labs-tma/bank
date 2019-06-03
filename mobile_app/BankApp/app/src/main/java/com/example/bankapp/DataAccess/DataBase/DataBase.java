@@ -19,7 +19,6 @@ public class DataBase extends SQLiteOpenHelper {
         db.execSQL(DBUtilities.CREATE_ACCOUNT_TRANSACTION_TABLE);
         db.execSQL(DBUtilities.CREATE_TRANSACTIONS_TABLE);
         db.execSQL(DBUtilities.CREATE_TRANSACTION_TYPE_TABLE);
-
     }
 
     @Override
@@ -33,6 +32,4 @@ public class DataBase extends SQLiteOpenHelper {
         onCreate(db);
 
     }
-
-
 }

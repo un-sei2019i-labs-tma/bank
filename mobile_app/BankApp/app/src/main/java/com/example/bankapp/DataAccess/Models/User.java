@@ -33,6 +33,7 @@ public class User {
         this.passwordDate= passwordDate;
     }
 
+
     public User(Cursor row) {
         if (row.moveToFirst()){
             this.idUser = row.getInt(0);
@@ -50,7 +51,6 @@ public class User {
     public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
-
     public int getIdUser() {
         return idUser;
     }
@@ -59,7 +59,6 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-
     public String getName() {
         return name;
     }
@@ -68,7 +67,6 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
     public String getLastName() {
         return lastName;
     }
@@ -77,7 +75,6 @@ public class User {
     public void setPassword(int password) {
         this.password = password;
     }
-
     public int getPassword() {
         return password;
     }
@@ -86,7 +83,6 @@ public class User {
     public void setAccount(int account) {
         this.account = account;
     }
-
     public int getAccount() {
         return account;
     }
@@ -95,7 +91,6 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
     public String getEmail() {
         return email;
     }
@@ -104,7 +99,6 @@ public class User {
     public void setPrevPassword(int prevPassword) {
         this.prevPassword = prevPassword;
     }
-
     public int getPrevPassword() {
         return prevPassword;
     }
@@ -113,9 +107,7 @@ public class User {
     public void setPasswordDate(Date passwordDate) {
         this.passwordDate = passwordDate;
     }
-
     public Date getPasswordDate() {
         return passwordDate;
     }
-
 }
