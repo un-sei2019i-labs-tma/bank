@@ -4,5 +4,10 @@
     <string name="homepage">Login</string>
     <string name="User">Usuario</string>
     <string name="Login">login</string>
-    <string name="Register">Register</string>
+    <string name="bienvenidohomeuser">Bienvenido</string>
+    <string name="buttontosend">enviar</string>
+    <string name="su_saldo_es">Su saldo es:</string>
+    <string name="saldoactual">$0</string>
+    <string name="buttonsendmoney">enviar</string>
+    <string name="sendpage">Enviar</string>
 </resources>
