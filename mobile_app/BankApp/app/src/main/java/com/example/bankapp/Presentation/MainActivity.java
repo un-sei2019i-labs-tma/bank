@@ -1,6 +1,7 @@
 package com.example.bankapp.Presentation;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -53,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
             if (row.moveToFirst()){
 
                 if (row.getString(1).equals(password)){
-                    Toast.makeText(this,"praise the sun \\[T]/",Toast.LENGTH_SHORT).show();
+                    Intent intent1 = new Intent(MainActivity.this, HomeUserActivity.class);
+                    startActivity(intent1);
                 }else {
                     Toast.makeText(this,"Password incorecto",Toast.LENGTH_SHORT).show();
                 }
