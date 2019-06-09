@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // create test use
-        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        //SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         Date date = new Date(System.currentTimeMillis());
         User user = new User(1,"pepito","perez",654321,123456789,"test@test.com",000000,date );
         UserRepository repo= new UserRepository();
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         String user = mTextUsername.getText().toString();
         String password = mTextPassword.getText().toString();
         if (!user.isEmpty() && !password.isEmpty()){
-            Cursor row = DB.rawQuery("SELECT name, password FROM user WHERE name ="+user.trim(),null);
+            Cursor row = DB.rawQuery("SELECT idUser, password FROM user WHERE idUser ="+user.trim(),null);
 
             if (row.moveToFirst()){
 
