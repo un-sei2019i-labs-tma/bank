@@ -26,7 +26,6 @@ public class TransactionRepository {
         DB.insert("transactions",null,register);
         DB.close();
     }
-
     //b
     public void createTransaction (Context context, Account accountOrigin, Account accountEnd, double Amount){
         Date date = new Date(System.currentTimeMillis());
