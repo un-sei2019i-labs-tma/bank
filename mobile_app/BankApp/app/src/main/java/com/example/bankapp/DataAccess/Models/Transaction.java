@@ -10,18 +10,19 @@ public class Transaction {
     private int idTransaction;
     private int accountOrigin;
     private int accountEnd;
-    private double mount;
+    private double amount;
     private Date date;
     private int transactionType;
 
-    public Transaction(int idTransaction, int accountOrigin, int accountEnd, double mount, Date date, int transactionType) {
+    public Transaction(int idTransaction, int accountOrigin, int accountEnd, double amount, Date date, int transactionType) {
         this.idTransaction = idTransaction;
         this.accountOrigin = accountOrigin;
         this.accountEnd = accountEnd;
-        this.mount = mount;
+        this.amount = amount;
         this.date = date;
         this.transactionType = transactionType;
     }
+
 
 
     public Transaction(Cursor row){
@@ -29,7 +30,7 @@ public class Transaction {
             this.idTransaction = row.getInt(0);
             this.accountOrigin = row.getInt(1);
             this.accountEnd = row.getInt(2);
-            this.mount = row.getDouble(3);
+            this.amount = row.getDouble(3);
             this.date = new Date(row.getLong(4));
             this.transactionType = row.getInt(5);
         }
@@ -63,12 +64,12 @@ public class Transaction {
     }
 
 
-    public void setMount(double mount) {
-        this.mount = mount;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
-    public double getMount() {
-        return mount;
+    public double getAmount() {
+        return amount;
     }
 
 

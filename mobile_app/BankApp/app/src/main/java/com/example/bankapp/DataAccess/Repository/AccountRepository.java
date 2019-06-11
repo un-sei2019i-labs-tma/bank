@@ -30,7 +30,7 @@ public class AccountRepository {
         return account;
     }
 
-    public void updateBalanceAccount(Context context, Account account){
+    public void updateAccount(Context context, Account account){
         DataBase admin = new DataBase(context,"DataBase",null,1);
         SQLiteDatabase DB = admin.getWritableDatabase();
         ContentValues register = new ContentValues();
