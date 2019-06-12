@@ -5,7 +5,7 @@ import android.database.Cursor;
 public class Account {
 
     private int idAccount;
-    private int balance;
+    private double balance;
 
 
     public Account(int idAccount, int balance) {
@@ -23,11 +23,11 @@ public class Account {
     }
 
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
@@ -35,7 +35,7 @@ public class Account {
     public Account(Cursor row) {
         if (row.moveToFirst()){
             this.idAccount = row.getInt(0);
-            this.balance = row.getInt(1);
+            this.balance = row.getDouble(1);
         }
 
     }
