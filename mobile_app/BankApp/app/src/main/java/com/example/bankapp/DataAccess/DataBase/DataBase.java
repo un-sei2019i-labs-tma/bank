@@ -16,7 +16,7 @@ public class DataBase extends SQLiteOpenHelper {
         db.execSQL(DBUtilities.CREATE_USER_TABLE);
         db.execSQL(DBUtilities.CREATE_ADMIN_TABLE);
         db.execSQL(DBUtilities.CREATE_ACCOUNT_TABLE);
-        db.execSQL(DBUtilities.CREATE_ACCOUNT_TRANSACTION_TABLE);
+        //db.execSQL(DBUtilities.CREATE_ACCOUNT_TRANSACTION_TABLE);
         db.execSQL(DBUtilities.CREATE_TRANSACTIONS_TABLE);
         db.execSQL(DBUtilities.CREATE_TRANSACTION_TYPE_TABLE);
     }
@@ -26,7 +26,7 @@ public class DataBase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS user");
         db.execSQL("DROP TABLE IF EXISTS admin");
         db.execSQL("DROP TABLE IF EXISTS account");
-        db.execSQL("DROP TABLE IF EXISTS account_transaction");
+        //db.execSQL("DROP TABLE IF EXISTS account_transaction");
         db.execSQL("DROP TABLE IF EXISTS transactions");
         db.execSQL("DROP TABLE IF EXISTS transaction_type");
         onCreate(db);
