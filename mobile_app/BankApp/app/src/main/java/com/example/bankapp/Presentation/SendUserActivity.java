@@ -12,22 +12,24 @@ import android.widget.Toast;
 import com.example.bankapp.BusinessLogic.SendMoneyController;
 import com.example.bankapp.DataAccess.DataBase.DataBase;
 import com.example.bankapp.DataAccess.Models.Account;
+import com.example.bankapp.DataAccess.Models.User;
 import com.example.bankapp.DataAccess.Repository.AccountRepository;
+import com.example.bankapp.DataAccess.Repository.UserRepository;
 import com.example.bankapp.R;
 
 public class SendUserActivity extends AppCompatActivity {
 
-    EditText mTextUserEnd;
+    EditText mTextUserAccountEnd;
     EditText mTextAmount;
     Button mButtonSend;
-    private static final String USER_ACCOUNT = "user_account";
+    private static final String USER = "user";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_user);
 
-        mTextUserEnd = (EditText) findViewById(R.id.editusers);
+        mTextUserAccountEnd = (EditText) findViewById(R.id.editusers);
         mTextAmount = (EditText) findViewById(R.id.editsendmoney);
         mButtonSend = (Button) findViewById(R.id.buttonsend);
     }
@@ -35,14 +37,18 @@ public class SendUserActivity extends AppCompatActivity {
     public void send(View view) {
 
 
-        String userEnd = mTextUserEnd.getText().toString();
-        int uEnd = Integer.parseInt(userEnd);
-        String amount = mTextAmount.getText().toString();
-        int amoun = Integer.parseInt(amount);
-        int oUser = Integer.parseInt(USER_ACCOUNT);
+        String userAccountEnd = mTextUserAccountEnd.getText().toString();
+        int endUserAccountID = Integer.parseInt(userAccountEnd);
+        String amountS = mTextAmount.getText().toString();
+        double amount = Double.parseDouble(amountS);
+        int originUser = getIntent().getIntExtra(USER,0);
+        UserRepository userRepository = new UserRepository();
+        User userOrigin = userRepository.getUserByID(this,originUser);
+        AccountRepository accountRepository = new AccountRepository();
+        Account accountOrigin = accountRepository.getAccount(this,userOrigin.getAccount());
 
         SendMoneyController sendMoneyController = new SendMoneyController();
-        int message = sendMoneyController.send(this,oUser,uEnd,amoun);
+        int message = sendMoneyController.send(this,accountOrigin.getIdAccount(),endUserAccountID,amount);
 
         switch(message) {
             case 0:
@@ -59,6 +65,7 @@ public class SendUserActivity extends AppCompatActivity {
         }
 
         Intent ToHomeUser = new Intent(this,HomeUserActivity.class);
+        ToHomeUser.putExtra(USER,userOrigin.getIdUser());
         startActivity(ToHomeUser);
 
     }

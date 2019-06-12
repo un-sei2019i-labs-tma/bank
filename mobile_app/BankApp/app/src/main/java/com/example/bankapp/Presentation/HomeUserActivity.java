@@ -18,11 +18,19 @@ public class HomeUserActivity extends AppCompatActivity {
 
     private static  final  String USER = "user";
     TextView balanceText;
+    TextView welcomeText;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_user);
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         UserRepository userRepository = new UserRepository();
         int id = getIntent().getIntExtra(USER,0);
         User user = userRepository.getUserByID(this, id);
@@ -30,13 +38,16 @@ public class HomeUserActivity extends AppCompatActivity {
         AccountRepository accountRepository = new AccountRepository();
         Account account = accountRepository.getAccount(this,user.getAccount());
         balanceText= (TextView) findViewById(R.id.editbalance);
-        Integer balance = account.getBalance();
+        welcomeText = (TextView) findViewById(R.id.texthomeuser);
+        welcomeText.setText("Hola  "+name);
+        Double balance = account.getBalance();
         balanceText.setText("$  "+balance.toString());
+
     }
 
-
     public void SendMoney(View view) {
-        Intent intent1 = new Intent(HomeUserActivity.this, SendUserActivity.class);
-        startActivity(intent1);
+        Intent intentSendMoney = new Intent(HomeUserActivity.this, SendUserActivity.class);
+        intentSendMoney.putExtra(USER,getIntent().getIntExtra(USER,0));
+        startActivity(intentSendMoney);
     }
 }

@@ -36,7 +36,7 @@ public class AccountRepository {
         ContentValues register = new ContentValues();
         register.put("id_account",account.getIdAccount());
         register.put("balance",account.getBalance());
-        DB.update("id_account",register,"id_account ="+account.getBalance(),null);
+        DB.update("account",register,"id_account ="+account.getIdAccount(),null);
         DB.close();
     }
 

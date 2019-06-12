@@ -1,8 +1,6 @@
 package com.example.bankapp.BusinessLogic;
 
-<<<<<<< HEAD
-public class LoginController {
-=======
+
 import android.content.Context;
 
 import com.example.bankapp.DataAccess.Models.Account;
@@ -25,5 +23,5 @@ public class LoginController {
             return true;
         }
     }
->>>>>>> dccdc4ceef6458ebc63b453a7a17e2e7d7566b24
+
 }
