@@ -27,21 +27,22 @@ public class DBUtilities {
 
 
     public static final String CREATE_ACCOUNT_TRANSACTION_TABLE = "CREATE TABLE account_transaction (" +
-            "accountId_account INTEGER (10) PRIMARY KEY ," +
-            "transactionId_transaction INTEGER (10) PRIMARY KEY, " +
+            "accountId_account INTEGER (10)  ," +
+            "transactionId_transaction INTEGER (10) , " +
             "FOREIGN KEY (accountId_account) REFERENCES account(id_account)," +
-            "FOREIGN KEY (id_transaction) REFERENCES transactions(id_transaction))";
+            "FOREIGN KEY (transactionId_transaction) REFERENCES transactions(id_transaction)" +
+            "PRIMARY KEY (accountId_account, transactionId_transaction ))";
 
 
     public static final String CREATE_TRANSACTIONS_TABLE = "CREATE TABLE transactions (" +
-            "id_transaction INTEGER (10) PRIMARY KEY AUTOINCREMENT," +
+            "id_transaction INTEGER  PRIMARY KEY AUTOINCREMENT," +
             "account_origin INTEGER (10) ," +
             "account_end INTEGER (10) NOT NULL," +
             "mount DOUBLE NOT NULL," +
             "date DATE NOT NULL," +
             "transaction_type INTEGER (10) NOT NULL, " +
             "FOREIGN KEY (account_end) REFERENCES account(id_account)" +
-            "FOREIGN KEY (transactionType) REFERENCES transaction_type(idTransactionType))";
+            "FOREIGN KEY (transaction_type) REFERENCES transaction_type(idTransactionType))";
 
 
     public static final String CREATE_TRANSACTION_TYPE_TABLE = "CREATE TABLE transaction_type (" +
